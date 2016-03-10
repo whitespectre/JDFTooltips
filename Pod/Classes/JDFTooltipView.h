@@ -96,6 +96,15 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  */
 @property (nonatomic) BOOL dismissOnTouch;
 
+/**
+ *  Animation Duration for showing tooltip.
+ */
+@property (nonatomic) CGFloat animationDuration;
+
+/**
+ *  Animation Delay for showing tooltip.
+ */
+@property (nonatomic) CGFloat animationDelay;
 
 #pragma mark Initialisation
 /**

@@ -172,6 +172,9 @@
     self.layer.shadowOpacity = 0.5f;
     self.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
     
+    self.animationDuration = 0.3;
+    self.animationDelay = 0.0;
+    
     self.tapGestureRecogniser = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
     [self addGestureRecognizer:self.tapGestureRecogniser];
 }
@@ -223,7 +226,7 @@
     self.transform = transform;
     
     // Perform the animation
-    [UIView animateWithDuration:0.3 delay:0.0 usingSpringWithDamping:0.6f initialSpringVelocity:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:self.animationDuration delay:self.animationDelay usingSpringWithDamping:0.6f initialSpringVelocity:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.transform = CGAffineTransformIdentity;
         self.alpha = 1.0f;
     } completion:^(BOOL finished) {
